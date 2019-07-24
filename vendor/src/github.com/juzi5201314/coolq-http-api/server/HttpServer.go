@@ -2,7 +2,7 @@ package server
 
 import (
 	"encoding/json"
-	"github.com/juzi5201314/cqhttp-go-sdk/command"
+	"github.com/juzi5201314/coolq-http-api/command"
 	"io/ioutil"
 	"net/http"
 	"strconv"

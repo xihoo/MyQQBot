@@ -1,6 +1,6 @@
 package command
 
-import "github.com/juzi5201314/cqhttp-go-sdk"
+import "github.com/juzi5201314/coolq-http-api"
 
 const (
 	GROUP   = 0
