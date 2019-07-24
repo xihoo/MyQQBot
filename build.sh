@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export GOPATH=${pwd}:${pwd}/vendor
+export GOPATH=$(pwd):$(pwd)/vendor
 
 mkdir bin/
 cd src/
