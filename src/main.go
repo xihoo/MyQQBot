@@ -29,7 +29,7 @@ func pm(sub_type string, message_id float64, user_id float64, message string, fo
 	return nil
 }
 
-func gm(sub_type string, message_id float64, group_id float64, user_id float64, anonymous string, anonymous_flag string, message string, font float64) map[string]interface{} {
+func gm(sub_type string, message_id float64, group_id float64, user_id float64, anonymous string, message string, font float64) map[string]interface{} {
 	fmt.Print("receive message: " + message + "，type is: " + sub_type + " \n")
 	if strings.Contains(message, "#") {
 		return map[string]interface{}{
