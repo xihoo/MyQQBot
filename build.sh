@@ -2,5 +2,7 @@
 
 export GOPATH=${pwd}:${pwd}/vendor
 
+mkdir bin/
 cd src/
-go build main.go
+go build -o qqrobot main.go
+mv qqrobot ../bin/
