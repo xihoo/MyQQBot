@@ -31,9 +31,9 @@ func pm(sub_type string, message_id float64, user_id float64, message string, fo
 
 func gm(sub_type string, message_id float64, group_id float64, user_id float64, anonymous string, message string, font float64) map[string]interface{} {
 	fmt.Print("receive message: " + message + "，type is: " + sub_type + " \n")
-	if strings.Contains(message, "#") {
+	if message[0] == '#' {
 		return map[string]interface{}{
-			"reply": message,
+			"reply": strings.TrimPrefix(message, "#"),
 		}
 	}
 	return nil
