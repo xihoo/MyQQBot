@@ -12,13 +12,13 @@ func main() {
 	if err != nil {
 		fmt.Print(err.Error())
 	}
-	s := server.StartListenServer(5700, "/")
+	s := server.StartListenServer(8080, "/msg")
 	s.ListenPrivateMessage(server.PrivateMessageListener(pm))
 	s.Listen()
 }
 
 func pm(sub_type string, message_id float64, user_id float64, message string, font float64) map[string]interface{} {
-	println("receive message: " + message + "，type is" + sub_type)
+	fmt.Print("receive message: " + message + "，type is" + sub_type)
 	return map[string]interface{}{
 		"reply": "auto reply",
 	}
