@@ -1,6 +1,7 @@
 package main
 
 import (
+	"flag"
 	"fmt"
 	"github.com/golang/glog"
 	"github.com/juzi5201314/coolq-http-api"
@@ -9,6 +10,7 @@ import (
 )
 
 func main() {
+	flag.Parse()
 	api := cqhttp_go_sdk.Api("http://localhost:5700", "MAX8char")
 	_, err := api.SendPrivateMsg(630558072, "hello", false)
 	if err != nil {
