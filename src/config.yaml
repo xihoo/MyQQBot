@@ -1,0 +1,8 @@
+redisAddr: 127.0.0.1
+redisPort: 6379
+redisPassword: ''
+qqListenAddr: '/msg'
+qqListenPort: 8080
+qqSendAddr: '127.0.0.1'
+qqSendPort: 5700
+qqSendPassword: 'MAX8char'

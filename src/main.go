@@ -1,8 +1,8 @@
 package main
 
 import (
+	"common"
 	"flag"
-	"fmt"
 	"github.com/golang/glog"
 	"github.com/juzi5201314/coolq-http-api"
 	"github.com/juzi5201314/coolq-http-api/server"
@@ -10,13 +10,16 @@ import (
 )
 
 func main() {
+	configFile := flag.String("conf", "./config.yaml", "config file path")
 	flag.Parse()
-	api := cqhttp_go_sdk.Api("http://localhost:5700", "MAX8char")
-	_, err := api.SendPrivateMsg(630558072, "hello", false)
+	common.LoadConfig(*configFile)
+	api := cqhttp_go_sdk.Api(common.GetConfig().QQSendAddr+":"+common.GetConfig().QQSendPort, common.GetConfig().QQSendPassword)
+	common.InitSpace(api)
+	/*_, err := api.SendPrivateMsg(630558072, "hello", false)
 	if err != nil {
 		fmt.Print(err.Error())
-	}
-	s := server.StartListenServer(8080, "/msg")
+	}*/
+	s := server.StartListenServer(8080, common.GetConfig().QQListenAddr)
 	s.ListenPrivateMessage(server.PrivateMessageListener(pm))
 	s.ListenGroupMessage(server.GroupMessageListener(gm))
 	s.Listen()
