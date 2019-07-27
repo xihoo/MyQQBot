@@ -41,7 +41,7 @@ func gm(sub_type string, message_id float64, group_id float64, user_id float64, 
 	if message[0] == '#' {
 		if strings.Contains(message, "dj") {
 			return map[string]interface{}{
-				"reply":     strings.TrimPrefix(strings.Replace(message, "dj", cq.At("458830973"), -1), "#"),
+				"reply":     strings.TrimPrefix(strings.Replace(message, "dj", cq.At("458830973")+" ", -1), "#"),
 				"at_sender": false,
 			}
 		}
