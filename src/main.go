@@ -39,7 +39,8 @@ func gm(sub_type string, message_id float64, group_id float64, user_id float64, 
 	glog.Info("receive message: " + message + "，type is: " + sub_type + " \n")
 	if message[0] == '#' {
 		return map[string]interface{}{
-			"reply": strings.TrimPrefix(message, "#"),
+			"reply":     strings.TrimPrefix(message, "#"),
+			"at_sender": false,
 		}
 	}
 	return nil
