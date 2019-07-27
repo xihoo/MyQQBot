@@ -24,6 +24,7 @@ func (rClient *RedisClient) Set(key string, value interface{}) error {
 	if err != nil {
 		return err
 	}
+	defer conn.Close()
 	var valueStr string
 	switch arg := value.(type) {
 	case string:
